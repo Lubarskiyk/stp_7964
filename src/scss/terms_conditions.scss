@@ -1,0 +1,49 @@
+.terms_back_link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  margin-bottom: 24px;
+  fill: $_white;
+  transition: all $_transition;
+  @include font(16, 19.2);
+  @include media(desktop) {
+    margin-bottom: 40px;
+    @include font(32, 44);
+  }
+
+  &:hover {
+    color: $_blue_hover;
+    fill: $_blue_hover;
+  }
+}
+.terms_back_link_icon {
+  width: 18px;
+  height: 18px;
+
+  @include media(desktop) {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.terms_title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+  @include font(24, 32);
+  @include media(desktop) {
+    @include font(64, 87);
+    margin-bottom: 48px;
+  }
+}
+
+.terms_text {
+  font-weight: 400;
+  @include font(14, 19.6);
+  margin-bottom: 20px;
+  @include media(desktop) {
+    @include font(24, 28.8);
+    margin-bottom: 36px;
+  }
+}
