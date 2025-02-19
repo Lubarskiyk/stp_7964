@@ -1,0 +1,82 @@
+.title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+  @include font(24, 32);
+  @include media(desktop) {
+    @include font(64, 87);
+    margin-bottom: 48px;
+  }
+}
+.first {
+  margin-bottom: 52px;
+}
+.text {
+  font-weight: 400;
+  @include font(14, 19.6);
+  margin-bottom: 20px;
+  @include media(desktop) {
+    @include font(24, 28.8);
+    margin-bottom: 36px;
+  }
+}
+
+.subtitle {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 20px;
+  @include font(20, 24);
+  @include media(desktop) {
+    @include font(36, 43.2);
+    margin-bottom: 48px;
+
+  }
+}
+
+.h3_title {
+  font-weight: 600;
+  max-width: 272px;
+  margin-bottom: 16px;
+  @include font(16, 22.4);
+  @include media(desktop) {
+    @include font(36, 43.2);
+    margin-bottom: 48px;
+    max-width: 1000px;
+  }
+}
+
+.list_title {
+  @include font(14, 19.6);
+  margin-bottom: 16px;
+  @include media(desktop) {
+    @include font(24, 28.8);
+    margin-bottom: 36px;
+  }
+}
+.list_text {
+  font-weight: 400;
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 40px;
+  @include media(desktop) {
+    margin-bottom: 109px;
+  }
+}
+
+.list_item {
+  @include font(14, 19.6);
+  @include media(desktop) {
+    @include font(24, 38.4);
+  }
+}
+
+.subtitle_2 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 32px;
+  @include font(24, 28.8);
+  @include media(desktop) {
+    @include font(64, 87);
+    margin-bottom: 90px;
+  }
+}
