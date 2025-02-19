@@ -1,3 +1,11 @@
+.terms_conditions {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  @include media(desktop) {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+}
 .terms_back_link {
   display: flex;
   align-items: center;
@@ -45,5 +53,37 @@
   @include media(desktop) {
     @include font(24, 28.8);
     margin-bottom: 36px;
+  }
+}
+.terms_list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 36px;
+  @include font(14,19.6);
+  @include media(desktop) {
+    @include font(24,38.4);
+  }
+}
+.terms_list_items {
+  color: $_blue_hover;
+  &:hover {
+    color: $_white;
+  }
+}
+
+.terms_link_decorate {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 1px;
+}
+
+.terms_subtitle {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 20px;
+  @include font(20, 24);
+  @include media(desktop) {
+    @include font(36, 43.2);
+    margin-bottom: 48px;
   }
 }
