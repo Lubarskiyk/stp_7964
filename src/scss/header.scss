@@ -1,13 +1,24 @@
 .header {
-  // color: chocolate;
   padding-top: 24px;
   padding-bottom: 40px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+
+  background: transparent;
+  transition: background-color $_transition, backdrop-filter $_transition;
+
+  &.scrolled {
+    background-color: rgba(158, 187, 255, 0.2);
+    backdrop-filter: blur(10px);
+  }
 
   &__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 56px;
+    position: relative;
 
     @include media(desktop) {
       height: 98px;
@@ -17,9 +28,6 @@
   &__link {
     width: 56px;
     height: 56px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 20px;
     overflow: hidden;
 
@@ -33,13 +41,87 @@
     width: 100%;
     height: 100%;
   }
+}
 
-  &__wrap {
+.burger {
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+  }
+
+  &__open {
+    width: 44px;
+    height: 44px;
     @include media(desktop) {
       display: none;
     }
   }
-  &__icon {
+
+  &__menuIcon {
     fill: none;
   }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    transform: translateX(100%);
+    transition: transform $_transition;
+    top: -24px;
+    right: 0;
+    z-index: 99;
+    width: 224px;
+    // height: 100vh;
+    overflow: hidden;
+    padding: 72px 0;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    background: rgba(46, 54, 78, 0.8);
+
+    &.showMenu {
+      transform: translateX(0);
+    }
+
+    @include media(desktop) {
+      display: none;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 30px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 52px;
+    border-bottom: 1px solid rgba(213, 213, 227, 0.27);
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: 32px;
+    color: $_white;
+  }
+}
+
+.is-hidden {
+  display: none;
 }
