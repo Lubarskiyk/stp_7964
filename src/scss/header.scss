@@ -1,12 +1,14 @@
 .header {
-  padding-top: 24px;
-  padding-bottom: 40px;
   position: fixed;
+  top: 24px;
   width: 100%;
   z-index: 1000;
-
   background: transparent;
   transition: background-color $_transition, backdrop-filter $_transition;
+
+  @include media(desktop) {
+    top: 39px;
+  }
 
   &.scrolled {
     background-color: rgba(158, 187, 255, 0.2);
@@ -66,23 +68,25 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-
     position: absolute;
-    transform: translateX(100%);
-    transition: transform $_transition;
+    transform: scale(0);
+    transition: transform $_transition, opacity $_transition,
+      visibility $_transition;
+    opacity: 0;
+    visibility: hidden;
     top: -24px;
     right: 0;
     z-index: 99;
     width: 224px;
-    // height: 100vh;
-    overflow: hidden;
     padding: 72px 0;
     border-radius: 20px;
     backdrop-filter: blur(10px);
     background: rgba(46, 54, 78, 0.8);
 
     &.showMenu {
-      transform: translateX(0);
+      transform: scale(1);
+      opacity: 1;
+      visibility: visible;
     }
 
     @include media(desktop) {

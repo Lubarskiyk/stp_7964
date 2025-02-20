@@ -7,10 +7,8 @@ export const initBurgerMenu = () => {
   const toggleMenu = () => {
     if (menu.classList.contains('showMenu')) {
       menu.classList.remove('showMenu');
-      menu.classList.add('is-hidden');
       menuBtn.classList.remove('is-hidden');
     } else {
-      menu.classList.remove('is-hidden');
       menu.classList.add('showMenu');
       menuBtn.classList.add('is-hidden');
     }
