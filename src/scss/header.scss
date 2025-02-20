@@ -56,12 +56,19 @@
     font-weight: 400;
     font-size: 32px;
     color: $_white;
+    transition: color $_transition, border $_transition;
 
     @include media(desktop) {
       display: flex;
       justify-content: center;
       align-items: center;
     }
+  }
+
+  &__downloadBtn:hover,
+  &___downloadBtn:focus {
+    color: $_blue_clicked;
+    border: 1px solid $_blue_clicked;
   }
 }
 
@@ -83,6 +90,12 @@
     font-weight: 400;
     font-size: 32px;
     color: $_white;
+    transition: color $_transition;
+  }
+
+  &__link:hover,
+  &__link:focus {
+    color: $_blue_clicked;
   }
 }
 
@@ -97,14 +110,11 @@
   &__open {
     width: 44px;
     height: 44px;
+
     @include media(desktop) {
       display: none;
     }
   }
-
-  // &__menuIcon {
-  //   fill: none;
-  // }
 
   &__wrapper {
     display: flex;
@@ -165,6 +175,12 @@
     font-weight: 400;
     font-size: 32px;
     color: $_white;
+    transition: color $_transition;
+  }
+
+  &__link:hover,
+  &__link:focus {
+    color: $_blue_clicked;
   }
 }
 
