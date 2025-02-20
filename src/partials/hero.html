@@ -1,3 +1,26 @@
 <section class="hero">
-  <h2>Hero</h2>
+  <div class="container hero-container">
+    <h1 class="hero_title">Super Flash Speed Hero</h1>
+    <h2 class="hero_subtitle">Lightning Fast, Heroic Might!</h2>
+    <picture>
+      <source
+        srcset="img/hero_desk.webp 1x, img/hero_desk_2x.webp 2x"
+        type="image/webp"
+        media="(min-width: 1200px)"
+      />
+      <source
+        srcset="img/hero_mob.webp 1x, img/hero_mob_2x.webp 2x"
+        type="image/webp"
+      />
+
+      <img
+        src="img/hero_mob.png"
+        srcset="img/hero_desk.png 1200w"
+        alt="men"
+        class="hero-image"
+        width="320"
+        height="240"
+      />
+    </picture>
+  </div>
 </section>

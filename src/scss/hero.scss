@@ -1,3 +1,39 @@
 .hero {
-  color: red;
+  padding-top: 120px;
+  @include media(desktop) {
+    padding-top: 252px;
+  }
+}
+.hero-container {
+  padding-left: 22px;
+  padding-right: 22px;
+}
+.hero_title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 8px;
+  @include font(24, 33);
+  @include media(desktop) {
+    @include font(64, 87);
+  }
+}
+.hero_subtitle {
+  color: $_accent;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 8px;
+  @include font(20, 27);
+  @include media(desktop) {
+    @include font(48, 65);
+  }
+}
+
+.hero-image {
+  width: 100%;
+  aspect-ratio: 320/240;
+
+  @include media(desktop) {
+    border-radius: 20px;
+    aspect-ratio: 1200/561;
+  }
 }
