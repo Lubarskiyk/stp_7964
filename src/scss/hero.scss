@@ -15,25 +15,46 @@
   @include font(24, 33);
   @include media(desktop) {
     @include font(64, 87);
+    margin-bottom: 20px;
   }
 }
 .hero_subtitle {
   color: $_accent;
   text-align: center;
   font-weight: 400;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   @include font(20, 27);
   @include media(desktop) {
     @include font(48, 65);
+    margin-bottom: 24px;
   }
 }
 
 .hero-image {
   width: 100%;
   aspect-ratio: 320/240;
-
+  margin-bottom: 14px;
   @include media(desktop) {
     border-radius: 20px;
     aspect-ratio: 1200/561;
+    margin-bottom: 40px;
+  }
+}
+.hero_google_link {
+  &:hover {
+    scale: 1.2;
+  }
+}
+.hero_google {
+  width: 132px;
+  height: 36px;
+  margin: 0 auto;
+  transition: scale $_transition;
+  &:hover {
+    scale: 1.1;
+  }
+  @include media(desktop) {
+    width: 322px;
+    height: 93px;
   }
 }
