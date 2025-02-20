@@ -5,8 +5,8 @@
   }
 }
 .hero-container {
-  padding-left: 22px;
-  padding-right: 22px;
+  padding-left: 0;
+  padding-right: 0;
 }
 .hero_title {
   text-align: center;
@@ -57,4 +57,86 @@
     width: 322px;
     height: 93px;
   }
+}
+
+.cookie_banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 272px;
+  width: 100%;
+  background: $_cookie_bg;
+  color: $_dark;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  gap: 16px;
+  z-index: 1000;
+
+  @include media(desktop) {
+    max-width: 1120px;
+
+    flex-direction: row;
+    padding: 16px;
+  }
+}
+
+.cookie_banner p {
+  flex: 1;
+  font-size: 14px;
+  max-width: 647px;
+  @include font(14, 19.6);
+  @include media(desktop) {
+    @include font(16, 22);
+  }
+}
+
+.cookie_buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  @include media(desktop) {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+.cookie_btn {
+  display: block;
+  padding: 16px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  @include font(14, 19.6);
+  @include media(desktop) {
+    @include font(16, 22);
+  }
+}
+
+.accept {
+  background: $_accent;
+  color: $_white;
+  transition: all $_transition;
+  &:hover {
+    background: $_white;
+    color: $_dark;
+  }
+}
+
+.decline {
+  background: $_white;
+  color: $_dark;
+  transition: all $_transition;
+  &:hover {
+    background: $_dark;
+    color: $_white;
+  }
+}
+
+.cookie_banner.hide {
+  display: none;
 }
