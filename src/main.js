@@ -1,3 +1,4 @@
+import { toggleText } from './js/aboutOpenCloseText.js';
 import { initBurgerMenu } from './js/burgerMenu.js';
 import { cookieBaner } from './js/cookieBaner.js';
 import { initHeaderScroll } from './js/headerScroll.js';
@@ -7,3 +8,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 initHeaderScroll();
 cookieBaner();
+toggleText();
+

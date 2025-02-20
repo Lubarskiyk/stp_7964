@@ -1,3 +1,72 @@
 .about_game {
-  color: gold;
+  padding-top: 56px;
+}
+.about_game_title {
+  font-weight: 600;
+  text-align: center;
+  @include font(24, 33);
+  margin-bottom: 36px;
+  @include media(desktop) {
+    @include font(48, 65);
+    margin-bottom: 48px;
+  }
+}
+
+.text_container {
+  margin-bottom: 20px;
+  @include media(desktop) {
+    margin-bottom: 36px;
+  }
+}
+.end {
+  margin-bottom: 0;
+}
+
+.text_content {
+  margin: 0 auto;
+  display: block;
+  overflow: hidden;
+  max-height: 100px;
+  transition: max-height 0.5s ease;
+  @include font(14, 19.6);
+  @include media(desktop) {
+    @include font(24, 28.8);
+    max-height: 200px;
+    max-width: 930px;
+    width: 100%;
+  }
+}
+
+.ellipsis {
+  display: inline;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  @include media(desktop) {
+    display: none;
+  }
+}
+
+.text_content.expanded {
+  max-height: 200px;
+}
+
+.text_content.expanded .ellipsis {
+  opacity: 0;
+}
+
+.toggle_btn {
+  display: block;
+  margin-left: auto;
+  @include font(16, 22);
+  color: $_white;
+  background: transparent;
+  text-decoration-line: underline;
+  cursor: pointer;
+  transition: color $_transition;
+  &:hover {
+    color: #375af5;
+  }
+  @include media(desktop) {
+    display: none;
+  }
 }
