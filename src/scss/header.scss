@@ -3,7 +3,7 @@
   top: 24px;
   width: 100%;
   z-index: 1000;
-  background: transparent;
+  background-color: transparent;
   transition: background-color $_transition, backdrop-filter $_transition;
 
   @include media(desktop) {
@@ -19,6 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 58px;
     height: 56px;
     position: relative;
 
@@ -42,6 +43,46 @@
   &__logo {
     width: 100%;
     height: 100%;
+  }
+
+  &__downloadBtn {
+    display: none;
+    border: 1px solid $_white;
+    border-radius: 23px;
+    padding: 12px 20px;
+    width: 192px;
+    height: 68px;
+
+    font-weight: 400;
+    font-size: 32px;
+    color: $_white;
+
+    @include media(desktop) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.nav {
+  display: none;
+
+  @include media(desktop) {
+    display: flex;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 714px;
+    height: 44px;
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: 32px;
+    color: $_white;
   }
 }
 
@@ -82,6 +123,7 @@
     border-radius: 20px;
     backdrop-filter: blur(10px);
     background: rgba(46, 54, 78, 0.8);
+    pointer-events: all;
 
     &.showMenu {
       transform: scale(1);
@@ -128,4 +170,24 @@
 
 .is-hidden {
   display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: 98;
+  display: none;
+
+  &.is-visible {
+    display: block;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+  pointer-events: none;
 }

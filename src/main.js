@@ -3,5 +3,5 @@ import { initHeaderScroll } from './js/headerScroll.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initBurgerMenu();
-  initHeaderScroll();
 });
+initHeaderScroll();

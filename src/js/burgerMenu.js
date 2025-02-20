@@ -3,15 +3,13 @@ export const initBurgerMenu = () => {
   const menu = document.querySelector('.burger__wrapper');
   const menuItems = document.querySelectorAll('.burger__item');
   const menuBtn = document.querySelector('.burger__open');
+  const overlay = document.querySelector('.overlay');
 
   const toggleMenu = () => {
-    if (menu.classList.contains('showMenu')) {
-      menu.classList.remove('showMenu');
-      menuBtn.classList.remove('is-hidden');
-    } else {
-      menu.classList.add('showMenu');
-      menuBtn.classList.add('is-hidden');
-    }
+    menu.classList.toggle('showMenu');
+    menuBtn.classList.toggle('is-hidden');
+    overlay.classList.toggle('is-visible');
+    document.body.classList.toggle('no-scroll');
   };
 
   burgerBtns.forEach(btn => {
@@ -21,4 +19,6 @@ export const initBurgerMenu = () => {
   menuItems.forEach(item => {
     item.addEventListener('click', toggleMenu);
   });
+
+  overlay.addEventListener('click', toggleMenu);
 };
