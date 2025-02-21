@@ -1,3 +1,7 @@
 .uniqueness {
-  color: green;
+  padding-top: 56px;
+  margin-bottom:  80px;
+  @include media(desktop) {
+    margin-bottom:  120px;
+  }
 }

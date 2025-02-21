@@ -1,13 +1,13 @@
 export function toggleText() {
   document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.toggle_btn');
+    const buttons = document.querySelectorAll('.js_toggle_btn');
 
     buttons.forEach(button => {
 
       button.addEventListener('click', () => {
         const textContainer = button.parentElement;
-        const textContent = textContainer.querySelector('.text_content');
-        const ellipsis = textContainer.querySelector('.ellipsis');
+        const textContent = textContainer.querySelector('.js_text_content');
+        const ellipsis = textContainer.querySelector('.js_ellipsis');
 
         if (textContent.classList.contains('expanded')) {
           textContent.classList.remove('expanded');

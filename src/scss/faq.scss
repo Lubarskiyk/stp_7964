@@ -1,3 +1,84 @@
 .faq {
-  color: red;
+  padding-top: 80px;
+  @include media(desktop) {
+    padding-top: 100px;
+  }
+}
+
+.faq_title {
+  text-align: center;
+  font-weight: 600;
+  @include font(24, 32);
+  margin-bottom: 36px;
+  @include media(desktop) {
+    @include font(48, 65);
+    margin-bottom: 48px;
+  }
+}
+
+.accordion-container {
+  max-width: 272px;
+  width: 100%;
+  margin: 0 auto;
+  @include media(desktop) {
+    max-width: 760px;
+  }
+}
+
+.ac {
+  background-color: $_faq_bg;
+  border: none;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  @include media(desktop) {
+    margin-bottom: 16px;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+.is-active {
+  background-color: $_faq_bg_active;
+}
+
+.ac .ac-header {
+  padding: 20px 24px;
+  @include media(desktop) {
+    padding: 24px;
+  }
+}
+
+.ac .ac-trigger {
+  @include font(14, 19);
+  padding: 0 78px 0 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  color: $_faq_color;
+  &:focus {
+    color: $_faq_color;
+  }
+  @include media(desktop) {
+    @include font(19, 28);
+    font-weight: 600;
+  }
+}
+
+.ac .ac-panel .ac-text {
+  @include font(14, 19.6);
+  font-family: 'Open Sans', sans-serif;
+  color: $_white_2;
+  padding: 0 24px 24px;
+  margin: 0;
+  @include media(desktop) {
+    @include font(15, 24);
+    padding: 12px 24px;
+  }
+}
+
+.ac .ac-trigger::after {
+  @include font(32, 48);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
