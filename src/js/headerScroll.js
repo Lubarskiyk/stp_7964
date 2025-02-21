@@ -14,6 +14,8 @@ export const initHeaderScroll = () => {
       }
     };
 
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
   });
 };

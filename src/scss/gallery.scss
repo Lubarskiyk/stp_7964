@@ -1,3 +1,109 @@
 .gallery {
-  color: red;
+  padding-top: 40px;
+  @include media(desktop) {
+    padding-top: 100px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    @include media(desktop) {
+      gap: 48px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    text-align: center;
+    color: $_white;
+    @include font(24, 33);
+
+    @include media(desktop) {
+      @include font(48, 65);
+    }
+  }
+
+  &__slider.swiper {
+    width: 100%;
+    height: auto;
+  }
+
+  &__wrapper.swiper-wrapper {
+    margin-bottom: 28px;
+
+    @include media(desktop) {
+      margin-bottom: 44px;
+    }
+  }
+
+  &__slide.swiper-slide {
+    width: 100%;
+    height: 262;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__img {
+    border-radius: 20px;
+    width: 262px;
+    height: 262px;
+  }
+
+  &__img img {
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__controlWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__button-next,
+  &__button-prev {
+    display: none;
+
+    @include media(desktop) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 56px;
+  height: 4px;
+  background-color: $_pagination_btn;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color $_transition;
+  border-radius: 20px;
+
+  @include media(desktop) {
+    width: 127px;
+    height: 8px;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $_accent;
 }
