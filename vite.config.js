@@ -32,7 +32,7 @@ export default defineConfig(({ command }) => {
       injectHTML(),
       FullReload(['./src/**/**.html']),
       ViteWebfontDownload([
-        'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400..700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..700&display=swap',
       ]),
       ViteImageOptimizer({
         exclude: /^sprite.svg$/,
