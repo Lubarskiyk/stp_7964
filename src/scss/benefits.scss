@@ -1,3 +1,95 @@
 .benefits {
   color: greenyellow;
+  &__container {
+    // overflow: hidden;
+  }
+
+  &__slider.swiper {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__wrapper.swiper-wrapper {
+    display: flex;
+    border-radius: 20px;
+    margin-bottom: 49px;
+  }
+
+  &__slide.swiper-slide {
+    width: 100%;
+    height: 318px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+
+    @include media(desktop) {
+      height: 348px;
+    }
+  }
+
+  &__text {
+    color: $_white_2;
+    flex-shrink: 0;
+    @include font(20, 27);
+
+    @include media(desktop) {
+      @include font(32, 44);
+    }
+  }
+
+  &__img {
+    border-radius: 20px;
+    width: 262px;
+    height: 262px;
+  }
+
+  &__img img {
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__controlWrapper {
+    // display: none;
+
+    @include media(desktop) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__button-next.swiper-button-next,
+  &__button-prev.swiper-button-prev {
+    width: 44px;
+    height: 44px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+.swiper-pagination {
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 4px;
+  background-color: white;
+  opacity: 0.5;
+  margin: 0 5px;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
 }
