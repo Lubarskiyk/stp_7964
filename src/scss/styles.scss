@@ -1,9 +1,13 @@
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+
 @import 'header.scss';
 @import 'hero.scss';
 @import 'benefits.scss';
 @import 'about_game.scss';
 @import 'gallery.scss';
-@import "accordion-js/dist/accordion.min.css";
+@import 'accordion-js/dist/accordion.min.css';
 @import 'faq.scss';
 @import 'reviews.scss';
 @import 'uniqueness.scss';

@@ -1,20 +1,41 @@
 .benefits {
-  color: greenyellow;
+  padding-top: 80px;
+  @include media(desktop) {
+    padding-top: 159px;
+  }
+
   &__container {
-    // overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    @include media(desktop) {
+      gap: 48px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    text-align: center;
+    color: $_white;
+    @include font(24, 33);
+
+    @include media(desktop) {
+      @include font(48, 65);
+    }
   }
 
   &__slider.swiper {
     width: 100%;
     height: auto;
-    overflow: hidden;
-    position: relative;
   }
 
   &__wrapper.swiper-wrapper {
-    display: flex;
-    border-radius: 20px;
-    margin-bottom: 49px;
+    margin-bottom: 28px;
+
+    @include media(desktop) {
+      margin-bottom: 44px;
+    }
   }
 
   &__slide.swiper-slide {
@@ -22,7 +43,7 @@
     height: 318px;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     justify-content: space-between;
 
     @include media(desktop) {
@@ -54,42 +75,49 @@
   }
 
   &__controlWrapper {
-    // display: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__button-next,
+  &__button-prev {
+    display: none;
 
     @include media(desktop) {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      width: 44px;
+      height: 44px;
+      background-color: transparent;
+      cursor: pointer;
     }
-  }
-
-  &__button-next.swiper-button-next,
-  &__button-prev.swiper-button-prev {
-    width: 44px;
-    height: 44px;
-    background-color: transparent;
-    cursor: pointer;
   }
 }
 
-.swiper-pagination {
-  position: relative;
-  bottom: 0;
-  text-align: center;
-  margin-top: 20px;
+.benefits__pagination {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .swiper-pagination-bullet {
-  width: 20px;
+  width: 56px;
   height: 4px;
-  background-color: white;
-  opacity: 0.5;
-  margin: 0 5px;
+  background-color: $_arrow_white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color $_transition;
+  border-radius: 20px;
+
+  @include media(desktop) {
+    width: 127px;
+    height: 8px;
+  }
 }
 
 .swiper-pagination-bullet-active {
-  opacity: 1;
+  background-color: $_accent;
 }
