@@ -1,8 +1,13 @@
 import Swiper from 'swiper';
 import { Keyboard, Navigation, Pagination, Autoplay } from 'swiper/modules';
 
-const initSwiper = () => {
-  const swiperBenefits = new Swiper('.swiper', {
+const initSwiper = ({
+  containerSelector,
+  paginationSelector,
+  nextButtonSelector,
+  prevButtonSelector,
+}) => {
+  const slider = new Swiper(containerSelector, {
     modules: [Navigation, Keyboard, Pagination, Autoplay],
 
     a11y: {
@@ -11,13 +16,13 @@ const initSwiper = () => {
     },
 
     pagination: {
-      el: '.swiper-pagination',
+      el: paginationSelector,
       clickable: true,
     },
 
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: nextButtonSelector,
+      prevEl: prevButtonSelector,
     },
 
     keyboard: {
@@ -28,17 +33,13 @@ const initSwiper = () => {
 
     slidesPerView: 1,
     spaceBetween: 16,
+    centeredSlides: true,
 
     breakpoints: {
-      320: {
-        slidesPerView: 1,
-        // spaceBetween: 16,
-        centeredSlides: true,
-      },
-
       1200: {
         slidesPerView: 4,
         spaceBetween: 24,
+        centeredSlides: false,
       },
     },
 
@@ -48,43 +49,44 @@ const initSwiper = () => {
       pauseOnMouseEnter: true,
     },
 
-    // centeredSlides: false,
     initialSlide: 0,
     speed: 1000,
   });
 
-  swiperBenefits.on('slideChange', () => {
-    const isEnd = swiperBenefits.isEnd;
-    const isBeginning = swiperBenefits.isBeginning;
+  slider.on('slideChange', () => {
+    const isEnd = slider.isEnd;
+    const isBeginning = slider.isBeginning;
 
     if (isEnd) {
-      swiperBenefits.autoplay.stop();
-      swiperBenefits.params.autoplay.reverseDirection = true;
-      swiperBenefits.autoplay.start();
+      slider.autoplay.stop();
+      slider.params.autoplay.reverseDirection = true;
+      slider.autoplay.start();
     } else if (isBeginning) {
-      swiperBenefits.autoplay.stop();
-      swiperBenefits.params.autoplay.reverseDirection = false;
-      swiperBenefits.autoplay.start();
+      slider.autoplay.stop();
+      slider.params.autoplay.reverseDirection = false;
+      slider.autoplay.start();
     }
   });
 };
 
-const swiperSection = document.querySelector('.benefits');
-const benefitsObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        initSwiper();
+export const observeSwiper = (selector, options) => {
+  const swiperSection = document.querySelector(selector);
+  if (!swiperSection) return;
 
-        benefitsObserver.disconnect();
-      }
-    });
-  },
-  {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1,
-  }
-);
-
-benefitsObserver.observe(swiperSection);
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          initSwiper(options);
+          observer.disconnect();
+        }
+      });
+    },
+    {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1,
+    }
+  );
+  observer.observe(swiperSection);
+};
