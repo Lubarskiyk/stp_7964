@@ -92,17 +92,22 @@
   font-weight: 400;
   list-style-type: disc;
   padding-left: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 64px;
   @include media(desktop) {
-    margin-bottom: 109px;
+    margin-bottom: 100px;
   }
 }
 
 .cookies_list_item {
+  margin-bottom: 6px;
   @include font(14, 19.6);
   @include media(desktop) {
     @include font(24, 38.4);
+    margin-bottom: 10px;
   }
+}
+.cookies_list_item:last-child {
+  margin-bottom: 0;
 }
 
 .cookies_subtitle_2 {
@@ -134,13 +139,6 @@
   }
 }
 
-.cookies_mb105 {
-  margin-bottom: 36px;
-  @include media(desktop) {
-    margin-bottom: 100px;
-  }
-}
-
 .cookies_item_link {
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -158,5 +156,12 @@
   @include media(desktop) {
     @include font(24, 28.8);
     margin-bottom: 36px;
+  }
+}
+
+.cookies_end {
+  margin-bottom: 64px;
+  @include media(desktop) {
+    margin-bottom: 100px;
   }
 }
