@@ -1,3 +1,92 @@
 .reviews {
-  color: red;
+  padding-top: 40px;
+  @include media(desktop) {
+    padding-top: 100px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    @include media(desktop) {
+      gap: 48px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    text-align: center;
+    color: $_white;
+    @include font(24, 33);
+
+    @include media(desktop) {
+      @include font(48, 65);
+    }
+  }
+
+  &__slider.swiper {
+    width: 100%;
+    height: auto;
+  }
+
+  &__slide.swiper-slide {
+    width: 272px;
+    height: 215px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    border-radius: 20px;
+    padding: 20px;
+
+    backdrop-filter: blur(18px);
+    background: rgba(235, 235, 245, 0.64);
+
+    @include media(desktop) {
+      width: 357px;
+      height: 260px;
+    }
+  }
+
+  &__subwrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  // ---color!!!
+  &__reviewerName {
+    font-weight: 700;
+    @include font(16, 22);
+    text-align: center;
+    color: #1b1515;
+
+    @include media(desktop) {
+      @include font(20, 27);
+      color: #000;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+  }
+
+  &__text {
+    font-weight: 400;
+    @include font(12, 17);
+    // font-size: 12px;
+    // line-height: 1.4;
+    color: $_dark;
+
+    @include media(desktop) {
+      @include font(16, 22);
+    }
+  }
 }
