@@ -1,7 +1,7 @@
 .benefits {
-  padding-top: 80px;
+  padding-top: 40px;
   @include media(desktop) {
-    padding-top: 159px;
+    padding-top: 100px;
   }
 
   &__container {
@@ -94,18 +94,18 @@
       cursor: pointer;
     }
   }
-}
 
-.benefits__pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .swiper-pagination-bullet {
   width: 56px;
   height: 4px;
-  background-color: $_arrow_white;
+  background-color: $_pagination_btn;
   display: flex;
   justify-content: center;
   align-items: center;
