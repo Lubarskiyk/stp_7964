@@ -46,7 +46,7 @@ export default defineConfig(({ command }) => {
           quality: 60,
         },
         webp: {
-          quality: 50,
+          quality: 60,
         },
       }),
     ],
