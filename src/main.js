@@ -5,6 +5,7 @@ import { faqAcordion } from './js/faq.js';
 import { initHeaderScroll } from './js/headerScroll.js';
 import { initSectionScroll } from './js/sectionScroll.js';
 import { observeSwiper } from './js/swiper.js';
+import { observeReviewsSwiper } from './js/swiperReviews.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initBurgerMenu();
@@ -26,4 +27,7 @@ observeSwiper('.gallery', {
   paginationSelector: '.gallery__pagination',
   nextButtonSelector: '.gallery__button-next',
   prevButtonSelector: '.gallery__button-prev',
+});
+observeReviewsSwiper('.reviews', {
+  containerSelector: '.reviews__slider',
 });
