@@ -40,15 +40,12 @@
     margin-bottom: 40px;
   }
 }
-.hero_google_link {
-  &:hover {
-    scale: 1.2;
-  }
-}
+
 .hero_google {
   width: 132px;
   height: 36px;
   margin: 0 auto;
+  scale: 1;
   transition: scale $_transition;
   &:hover {
     scale: 1.1;
