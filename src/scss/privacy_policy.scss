@@ -44,9 +44,7 @@
     margin-bottom: 48px;
   }
 }
-.privacy_first {
-  margin-bottom: 52px;
-}
+
 .privacy_text {
   font-weight: 400;
   @include font(14, 19.6);
@@ -92,17 +90,22 @@
   font-weight: 400;
   list-style-type: disc;
   padding-left: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 16px;
   @include media(desktop) {
-    margin-bottom: 109px;
+    margin-bottom: 36px;
   }
 }
 
 .privacy_list_item {
+  margin-bottom: 6px;
   @include font(14, 19.6);
   @include media(desktop) {
     @include font(24, 38.4);
+    margin-bottom: 10px;
   }
+}
+.privacy_list_item:last-child {
+  margin-bottom: 0;
 }
 
 .privacy_subtitle_2 {
@@ -170,7 +173,7 @@
     @include font(24, 38.4);
   }
 }
-.privacy_list_link_items{
+.privacy_list_link_items {
   color: $_blue_hover;
   &:hover {
     color: $_white;
@@ -181,4 +184,11 @@
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 1px;
+}
+
+.privacy_end {
+  margin-bottom: 64px;
+  @include media(desktop) {
+    margin-bottom: 100px;
+  }
 }
