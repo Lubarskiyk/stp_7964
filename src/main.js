@@ -1,4 +1,5 @@
 import { toggleText } from './js/aboutOpenCloseText.js';
+import { animate } from './js/animation.js';
 import { initBurgerMenu } from './js/burgerMenu.js';
 import { cookieBaner } from './js/cookieBaner.js';
 import { faqAcordion } from './js/faq.js';
@@ -10,6 +11,7 @@ import { observeReviewsSwiper } from './js/swiperReviews.js';
 document.addEventListener('DOMContentLoaded', () => {
   initBurgerMenu();
 });
+animate();
 initHeaderScroll();
 initSectionScroll();
 cookieBaner();
