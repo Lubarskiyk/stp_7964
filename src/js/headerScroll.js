@@ -1,6 +1,6 @@
 export const initHeaderScroll = () => {
   document.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector('.header');
+    const header = document.querySelector('.header__container');
 
     if (!header) {
       console.error('Header element not found');

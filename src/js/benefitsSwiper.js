@@ -9,10 +9,7 @@ const initSwiper = ({
 }) => {
   const slider = new Swiper(containerSelector, {
     modules: [Navigation, Keyboard, Pagination, Autoplay],
-    a11y: {
-      prevSlideMessage: 'Previous slide',
-      nextSlideMessage: 'Next slide',
-    },
+
     pagination: {
       el: paginationSelector,
       clickable: true,
@@ -27,7 +24,6 @@ const initSwiper = ({
       pageUpDown: true,
     },
     centeredSlides: true,
-    allowTouchMove: false,
     breakpoints: {
       0: {
         slidesPerView: 1,

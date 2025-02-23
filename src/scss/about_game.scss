@@ -1,6 +1,12 @@
 .about_game {
-  padding-top: 56px;
+  // padding-top: 56px;
+  padding-top: 80px;
+
+  @include media(desktop) {
+    padding-top: 160px;
+  }
 }
+
 .about_game_title {
   font-weight: 600;
   text-align: center;

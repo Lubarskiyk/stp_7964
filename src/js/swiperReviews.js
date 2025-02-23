@@ -5,11 +5,6 @@ const initSwiper = ({ containerSelector }) => {
   const slider = new Swiper(containerSelector, {
     modules: [Keyboard, Autoplay],
 
-    a11y: {
-      prevSlideMessage: 'Previous slide',
-      nextSlideMessage: 'Next slide',
-    },
-
     keyboard: {
       enabled: true,
       onlyInViewport: true,
@@ -29,28 +24,14 @@ const initSwiper = ({ containerSelector }) => {
     },
 
     autoplay: {
-      delay: 2500,
+      delay: 1000,
       disableOnInteraction: false,
       pauseOnMouseEnter: true,
     },
 
+    loop: true,
     initialSlide: 0,
-    speed: 1000,
-  });
-
-  slider.on('slideChange', () => {
-    const isEnd = slider.isEnd;
-    const isBeginning = slider.isBeginning;
-
-    if (isEnd) {
-      slider.autoplay.stop();
-      slider.params.autoplay.reverseDirection = true;
-      slider.autoplay.start();
-    } else if (isBeginning) {
-      slider.autoplay.stop();
-      slider.params.autoplay.reverseDirection = false;
-      slider.autoplay.start();
-    }
+    speed: 3000,
   });
 };
 

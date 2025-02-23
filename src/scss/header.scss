@@ -1,30 +1,37 @@
 .header {
   position: fixed;
   top: 24px;
+  left: 0;
   width: 100%;
   z-index: 1000;
   background-color: transparent;
   transition: background-color $_transition, backdrop-filter $_transition;
 
   @include media(desktop) {
-    top: 39px;
-  }
-
-  &.scrolled {
-    backdrop-filter: blur(20px);
-    background: rgba(99, 108, 135, 0.56);
+    top: 40px;
   }
 
   &__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 58px;
+    width: 272px;
     height: 76px;
+    padding: 10px 12px;
+    border-radius: 20px;
     position: relative;
 
     @include media(desktop) {
+      width: 1120px;
       height: 122px;
+      padding: 12px 20px;
+      border-radius: 28px;
+    }
+
+    &.scrolled {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(99, 108, 135, 0.56);
     }
   }
 
@@ -125,20 +132,23 @@
       visibility $_transition;
     opacity: 0;
     visibility: hidden;
-    top: -24px;
+    top: 0;
     right: 0;
     z-index: 99;
-    width: 224px;
-    padding: 90px 0;
+    width: 200px;
+    // height: 560px;
+    padding: 72px 0;
     border-radius: 20px;
-    backdrop-filter: blur(10px);
-    background: rgba(46, 54, 78, 0.8);
-    pointer-events: all;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background: rgba(99, 108, 135, 0.56);
+    pointer-events: none;
 
     &.showMenu {
       transform: scale(1);
       opacity: 1;
       visibility: visible;
+      pointer-events: all;
     }
 
     @include media(desktop) {
@@ -148,8 +158,8 @@
 
   &__close {
     position: absolute;
-    top: 30px;
-    right: 24px;
+    top: 16px;
+    right: 12px;
     width: 44px;
     height: 44px;
   }
@@ -201,13 +211,24 @@
   background-color: transparent;
   z-index: 98;
   display: none;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 
   &.is-visible {
     display: block;
+
+    @include media(desktop) {
+      display: none;
+    }
   }
 }
 
 .no-scroll {
   overflow: hidden;
   pointer-events: none;
+
+  @include media(desktop) {
+    overflow: auto;
+    pointer-events: all;
+  }
 }
