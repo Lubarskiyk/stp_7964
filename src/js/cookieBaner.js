@@ -3,7 +3,7 @@ export function cookieBaner() {
     const banner = document.getElementById('cookie_banner');
     const acceptBtn = document.getElementById('accept_cookies');
     const declineBtn = document.getElementById('decline_cookies');
-    console.log(banner);
+
     if (localStorage.getItem('cookiesAccepted') !== 'true') {
       banner.classList.remove('hide');
     }
