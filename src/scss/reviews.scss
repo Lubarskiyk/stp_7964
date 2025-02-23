@@ -58,16 +58,14 @@
     width: 100%;
   }
 
-  // ---color!!!
   &__reviewerName {
     font-weight: 700;
     @include font(16, 22);
     text-align: center;
-    color: #1b1515;
+    color: $_dark;
 
     @include media(desktop) {
       @include font(20, 27);
-      color: #000;
     }
   }
 

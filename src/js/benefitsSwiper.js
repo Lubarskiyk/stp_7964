@@ -9,48 +9,74 @@ const initSwiper = ({
 }) => {
   const slider = new Swiper(containerSelector, {
     modules: [Navigation, Keyboard, Pagination, Autoplay],
-
     a11y: {
       prevSlideMessage: 'Previous slide',
       nextSlideMessage: 'Next slide',
     },
-
     pagination: {
       el: paginationSelector,
       clickable: true,
     },
-
     navigation: {
       nextEl: nextButtonSelector,
       prevEl: prevButtonSelector,
     },
-
     keyboard: {
       enabled: true,
       onlyInViewport: true,
       pageUpDown: true,
     },
-
-    slidesPerView: 1,
-    spaceBetween: 16,
     centeredSlides: true,
-
+    allowTouchMove: false,
     breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 16,
+      },
       1200: {
         slidesPerView: 4,
         spaceBetween: 24,
         centeredSlides: false,
       },
     },
-
     autoplay: {
       delay: 2500,
-      disableOnInteraction: true,
+      disableOnInteraction: false,
       pauseOnMouseEnter: true,
     },
-
     initialSlide: 0,
     speed: 1000,
+  });
+
+  const slides = document.querySelectorAll('.benefits__slide');
+
+  let activeSlide = null;
+
+  slides.forEach(slide => {
+    slide.addEventListener('click', () => {
+      if (activeSlide && activeSlide !== slide) {
+        activeSlide.classList.remove('flipped');
+      }
+
+      if (slide.classList.contains('flipped')) {
+        slide.classList.remove('flipped');
+        activeSlide = null;
+        slider.autoplay.start();
+      } else {
+        slide.classList.add('flipped');
+        activeSlide = slide;
+        slider.autoplay.stop();
+      }
+    });
+  });
+
+  slider.on('slideChangeTransitionStart', () => {
+    document
+      .querySelectorAll('.benefits__slide.swiper-slide.flipped')
+      .forEach(slide => {
+        slide.classList.remove('flipped');
+      });
+    activeSlide = null;
   });
 
   slider.on('slideChange', () => {
@@ -69,7 +95,7 @@ const initSwiper = ({
   });
 };
 
-export const observeSwiper = (selector, options) => {
+export const observeBenefitsSwiper = (selector, options) => {
   const swiperSection = document.querySelector(selector);
   if (!swiperSection) return;
 
