@@ -45,33 +45,79 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    perspective: 1000px;
+    user-select: none;
 
     @include media(desktop) {
       height: 348px;
     }
-  }
 
-  &__text {
-    color: $_white_2;
-    flex-shrink: 0;
-    @include font(20, 27);
-
-    @include media(desktop) {
-      @include font(32, 44);
+    &.flipped .card {
+      transform: rotateY(180deg);
     }
-  }
 
-  &__img {
-    border-radius: 20px;
-    width: 262px;
-    height: 262px;
-  }
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform $_transition;
+      cursor: pointer;
 
-  &__img img {
-    border-radius: inherit;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+      & .front,
+      & .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      & .front {
+        justify-content: space-between;
+
+        &__text {
+          color: $_white_2;
+          flex-shrink: 0;
+          @include font(20, 27);
+
+          @include media(desktop) {
+            @include font(32, 44);
+          }
+        }
+
+        &__img {
+          border-radius: 20px;
+          width: 262px;
+          height: 262px;
+        }
+
+        &__img img {
+          border-radius: inherit;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      & .back {
+        justify-content: center;
+        transform: rotateY(180deg);
+        background-color: $_accent;
+        border-radius: 20px;
+        padding: 20px;
+
+        &__text {
+          @include font(14, 20);
+          color: $_white;
+
+          @include media(desktop) {
+            @include font(24, 29);
+          }
+        }
+      }
+    }
   }
 
   &__controlWrapper {
