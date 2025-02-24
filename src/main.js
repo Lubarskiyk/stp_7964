@@ -5,8 +5,8 @@ import { cookieBaner } from './js/cookieBaner.js';
 import { faqAcordion } from './js/faq.js';
 import { initHeaderScroll } from './js/headerScroll.js';
 import { initSectionScroll } from './js/sectionScroll.js';
-import { observeBenefitsSwiper } from './js/benefitsSwiper.js';
-import { observeSwiper } from './js/swiper.js';
+import { observeBenefitsSwiper } from './js/swiperBenefits.js';
+import { observeGallerySwiper } from './js/swiperGallery.js';
 import { observeReviewsSwiper } from './js/swiperReviews.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,7 +26,7 @@ observeBenefitsSwiper('.benefits', {
   prevButtonSelector: '.benefits__button-prev',
 });
 
-observeSwiper('.gallery', {
+observeGallerySwiper('.gallery', {
   containerSelector: '.gallery__slider',
   paginationSelector: '.gallery__pagination',
   nextButtonSelector: '.gallery__button-next',

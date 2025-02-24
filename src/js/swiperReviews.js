@@ -11,11 +11,12 @@ const initSwiper = ({ containerSelector }) => {
       pageUpDown: true,
     },
 
-    slidesPerView: 1,
-    spaceBetween: 16,
-    centeredSlides: true,
-
     breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        centeredSlides: true,
+      },
       1200: {
         slidesPerView: 3,
         spaceBetween: 24,
@@ -24,8 +25,7 @@ const initSwiper = ({ containerSelector }) => {
     },
 
     autoplay: {
-      delay: 1000,
-      disableOnInteraction: false,
+      delay: 3000,
       pauseOnMouseEnter: true,
     },
 
