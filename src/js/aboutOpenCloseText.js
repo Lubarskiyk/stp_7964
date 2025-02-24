@@ -3,7 +3,6 @@ export function toggleText() {
     const buttons = document.querySelectorAll('.js_toggle_btn');
 
     buttons.forEach(button => {
-
       button.addEventListener('click', () => {
         const textContainer = button.parentElement;
         const textContent = textContainer.querySelector('.js_text_content');
@@ -16,7 +15,7 @@ export function toggleText() {
           ellipsis.style.opacity = 1;
         } else {
           textContent.classList.add('expanded');
-          textContent.style.maxHeight = textContent.scrollHeight + 'px'; // Устанавливаем высоту для всего текста
+          textContent.style.maxHeight = textContent.scrollHeight + 'px';
           button.textContent = 'close';
           ellipsis.style.opacity = 0;
         }

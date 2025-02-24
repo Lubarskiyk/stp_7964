@@ -23,11 +23,12 @@ const initSwiper = ({
       onlyInViewport: true,
       pageUpDown: true,
     },
-    centeredSlides: true,
+
     breakpoints: {
       0: {
         slidesPerView: 1,
         spaceBetween: 16,
+        centeredSlides: true,
       },
       1200: {
         slidesPerView: 4,
@@ -35,13 +36,15 @@ const initSwiper = ({
         centeredSlides: false,
       },
     },
+
     autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
+      delay: 3000,
       pauseOnMouseEnter: true,
     },
+
+    loop: true,
     initialSlide: 0,
-    speed: 1000,
+    speed: 3000,
   });
 
   const slides = document.querySelectorAll('.benefits__slide');
@@ -73,21 +76,6 @@ const initSwiper = ({
         slide.classList.remove('flipped');
       });
     activeSlide = null;
-  });
-
-  slider.on('slideChange', () => {
-    const isEnd = slider.isEnd;
-    const isBeginning = slider.isBeginning;
-
-    if (isEnd) {
-      slider.autoplay.stop();
-      slider.params.autoplay.reverseDirection = true;
-      slider.autoplay.start();
-    } else if (isBeginning) {
-      slider.autoplay.stop();
-      slider.params.autoplay.reverseDirection = false;
-      slider.autoplay.start();
-    }
   });
 };
 

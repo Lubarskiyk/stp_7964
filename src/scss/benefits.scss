@@ -53,15 +53,15 @@
     user-select: none;
 
     @include media(desktop) {
-      height: 348px;
+      height: 358px;
     }
 
     .slide__text {
       color: $_white_2;
-      @include font(20, 27);
+      @include font(20, 25);
 
       @include media(desktop) {
-        @include font(32, 44);
+        @include font(32, 40);
       }
     }
 
@@ -118,11 +118,11 @@
         background: rgba(30, 29, 39, 0.3);
 
         &__text {
-          @include font(14, 20);
+          @include font(16, 20);
           color: $_white;
 
           @include media(desktop) {
-            @include font(24, 29);
+            @include font(20, 25);
           }
         }
       }
