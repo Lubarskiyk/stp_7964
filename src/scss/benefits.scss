@@ -47,7 +47,6 @@
     height: 318px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: space-between;
     perspective: 1000px;
     user-select: none;
@@ -58,6 +57,7 @@
 
     .slide__text {
       color: $_white_2;
+      text-align: center;
       @include font(20, 25);
 
       @include media(desktop) {
@@ -168,7 +168,7 @@
   border-radius: 20px;
 
   @include media(desktop) {
-    width: 127px;
+    width: 100px;
     height: 8px;
   }
 }
