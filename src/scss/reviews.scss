@@ -89,8 +89,6 @@
   &__text {
     font-weight: 400;
     @include font(12, 17);
-    // font-size: 12px;
-    // line-height: 1.4;
     color: $_dark;
 
     @include media(desktop) {
