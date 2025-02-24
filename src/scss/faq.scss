@@ -1,12 +1,13 @@
 .faq {
   padding-top: 80px;
   @include media(desktop) {
-    padding-top: 100px;
+    // padding-top: 100px;
+    padding-top: 160px;
   }
 }
 
 .faq_title {
-  text-transform:uppercase;
+  text-transform: uppercase;
   text-align: center;
   font-weight: 600;
   @include font(24, 32);
@@ -38,7 +39,6 @@
     margin-bottom: 0;
   }
 }
-
 
 .is-active {
   background-color: $_faq_bg_active;

@@ -10,11 +10,6 @@ const initSwiper = ({
   const slider = new Swiper(containerSelector, {
     modules: [Navigation, Keyboard, Pagination, Autoplay],
 
-    a11y: {
-      prevSlideMessage: 'Previous slide',
-      nextSlideMessage: 'Next slide',
-    },
-
     pagination: {
       el: paginationSelector,
       clickable: true,

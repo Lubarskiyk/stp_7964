@@ -1,7 +1,7 @@
 .benefits {
-  padding-top: 40px;
+  padding-top: 80px;
   @include media(desktop) {
-    padding-top: 100px;
+    padding-top: 160px;
   }
 
   &__container {
@@ -26,8 +26,12 @@
   }
 
   &__slider.swiper {
-    width: 100%;
+    width: 262px;
     height: auto;
+
+    @include media(desktop) {
+      width: 100%;
+    }
   }
 
   &__wrapper.swiper-wrapper {
@@ -52,13 +56,26 @@
       height: 348px;
     }
 
+    .slide__text {
+      color: $_white_2;
+      @include font(20, 27);
+
+      @include media(desktop) {
+        @include font(32, 44);
+      }
+    }
+
     &.flipped .card {
       transform: rotateY(180deg);
+
+      & .front {
+        transform: rotateY(180deg);
+      }
     }
 
     .card {
       width: 100%;
-      height: 100%;
+      height: 262px;
       position: relative;
       transform-style: preserve-3d;
       transition: transform $_transition;
@@ -71,22 +88,11 @@
         height: 100%;
         backface-visibility: hidden;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
 
       & .front {
-        justify-content: space-between;
-
-        &__text {
-          color: $_white_2;
-          flex-shrink: 0;
-          @include font(20, 27);
-
-          @include media(desktop) {
-            @include font(32, 44);
-          }
-        }
-
         &__img {
           border-radius: 20px;
           width: 262px;
@@ -102,11 +108,14 @@
       }
 
       & .back {
+        height: 262px;
         justify-content: center;
         transform: rotateY(180deg);
-        background-color: $_accent;
         border-radius: 20px;
         padding: 20px;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        background: rgba(30, 29, 39, 0.3);
 
         &__text {
           @include font(14, 20);
