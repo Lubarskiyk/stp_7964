@@ -54,11 +54,25 @@
 }
 .footer_second {
   color: var(--blue_hover, #375af5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   font-size: 14px;
   font-weight: 400;
+  gap: 8px;
   @include font(14, 17);
   @include media(desktop) {
-    @include font(24, 29);
+    gap: 12px;
+    flex-direction: row;
+    @include font(24, 28.8);
+  }
+}
+
+.footer_separator {
+  display: none;
+  @include media(desktop) {
+    display: inline-block;
   }
 }
